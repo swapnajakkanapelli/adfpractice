@@ -1,0 +1,34 @@
+{
+	"name": "DS_SQLDB_PARA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLDB_PARA",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"filename": {
+					"value": "@dataset().FILENAME",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"FILENAME": {
+				"type": "string"
+			},
+			"SCHEMA": {
+				"type": "string"
+			},
+			"TABLE": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "books"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

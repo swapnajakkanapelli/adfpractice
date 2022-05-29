@@ -1,0 +1,19 @@
+{
+	"name": "LS_BLOBConnection",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "blob",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "anilkevault",
+				"secretVersion": "latest version"
+			}
+		}
+	}
+}

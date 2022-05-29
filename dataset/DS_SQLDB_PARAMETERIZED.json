@@ -1,0 +1,42 @@
+{
+	"name": "DS_SQLDB_PARAMETERIZED",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQLDB_PARAMETER",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"filename": {
+					"value": "@dataset().FILENAME",
+					"type": "Expression"
+				},
+				"schema": {
+					"value": "@dataset().SCHEMA",
+					"type": "Expression"
+				},
+				"table": {
+					"value": "@dataset().TABLE",
+					"type": "Expression"
+				}
+			}
+		},
+		"parameters": {
+			"FILENAME": {
+				"type": "string"
+			},
+			"SCHEMA": {
+				"type": "string"
+			},
+			"TABLE": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "books"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
