@@ -1,0 +1,132 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "datafactorypractice099"
+		},
+		"ADLS_LS_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS_LS'"
+		},
+		"LS_ADLS_PARA_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_PARA'"
+		},
+		"LS_SQLDB_PARA_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQLDB_PARA'"
+		},
+		"LS_SQLDB_PARAMETER_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SQLDB_PARAMETER'"
+		},
+		"LS_sqldb1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_sqldb1'"
+		},
+		"SQLDB_LS_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'SQLDB_LS'"
+		},
+		"ADLS_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdemopractice.dfs.core.windows.net"
+		},
+		"LS_ADLS_PARA_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdemopractice.dfs.core.windows.net"
+		},
+		"LS_BLOBConnection_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "anilkevault"
+		},
+		"blob_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://anilkevault.vault.azure.net/"
+		},
+		"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"type": "string",
+			"defaultValue": "adfdemo011.database.windows.net"
+		},
+		"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"type": "string",
+			"defaultValue": "sqladmin"
+		},
+		"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"type": "secureString"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "datafactorypractice099_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_LS_accountKey": {
+						"value": "[parameters('ADLS_LS_accountKey')]"
+					},
+					"LS_ADLS_PARA_accountKey": {
+						"value": "[parameters('LS_ADLS_PARA_accountKey')]"
+					},
+					"LS_SQLDB_PARA_connectionString": {
+						"value": "[parameters('LS_SQLDB_PARA_connectionString')]"
+					},
+					"LS_SQLDB_PARAMETER_connectionString": {
+						"value": "[parameters('LS_SQLDB_PARAMETER_connectionString')]"
+					},
+					"LS_sqldb1_connectionString": {
+						"value": "[parameters('LS_sqldb1_connectionString')]"
+					},
+					"SQLDB_LS_connectionString": {
+						"value": "[parameters('SQLDB_LS_connectionString')]"
+					},
+					"ADLS_LS_properties_typeProperties_url": {
+						"value": "[parameters('ADLS_LS_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_PARA_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_PARA_properties_typeProperties_url')]"
+					},
+					"blob_properties_typeProperties_baseUrl": {
+						"value": "[parameters('blob_properties_typeProperties_baseUrl')]"
+					},
+					"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+						"value": "[parameters('AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint')]"
+					},
+					"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+						"value": "[parameters('AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName')]"
+					},
+					"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+						"value": "[parameters('AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword')]"
+					},
+					"LS_BLOBConnection_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('LS_BLOBConnection_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactorypractice099"
+		},
+		"ADLS_LS_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_PARA_accountKey": {
+			"value": ""
+		},
+		"LS_SQLDB_PARA_connectionString": {
+			"value": ""
+		},
+		"LS_SQLDB_PARAMETER_connectionString": {
+			"value": ""
+		},
+		"LS_sqldb1_connectionString": {
+			"value": ""
+		},
+		"SQLDB_LS_connectionString": {
+			"value": ""
+		},
+		"ADLS_LS_properties_typeProperties_url": {
+			"value": "https://adlsdemopractice.dfs.core.windows.net"
+		},
+		"LS_ADLS_PARA_properties_typeProperties_url": {
+			"value": "https://adlsdemopractice.dfs.core.windows.net"
+		},
+		"LS_BLOBConnection_properties_typeProperties_connectionString_secretName": {
+			"value": "anilkevault"
+		},
+		"blob_properties_typeProperties_baseUrl": {
+			"value": "https://anilkevault.vault.azure.net/"
+		},
+		"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogServerEndpoint": {
+			"value": "adfdemo011.database.windows.net"
+		},
+		"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminUserName": {
+			"value": "sqladmin"
+		},
+		"AZURESSISConnection_properties_typeProperties_ssisProperties_catalogInfo_catalogAdminPassword": {
+			"value": ""
+		}
+	}
+}
